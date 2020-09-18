@@ -1,10 +1,10 @@
-let map, marker
+let map, marker, infoWindow;
 
 function initMap() {
   let myLatLng = { lat: 20.977299, lng: 105.842444 };
   let iconMyLocal = {
   url: "/images/marker.png",
-  size: new google.maps.Size(20, 32),
+  size: new google.maps.Size(50, 50),
 }; 
 
   map = new google.maps.Map(document.getElementById("map"), {
@@ -18,10 +18,27 @@ function initMap() {
   marker = new google.maps.Marker({
     position: myLatLng,
     map: map,
-    icon: iconMyLocal.url,
+    icon: { url: iconMyLocal.url, scaledSize: iconMyLocal.size },
     draggable: true,
     title: "I am here ! ",
   }); 
+  let contentString = "<h1>Content nay ba con oi </h1>"
+
+  infoWindow = new google.maps.InfoWindow({
+    content: contentString,
+    maxwidth: 300,
+  })
+  // event click marker show infoWindow
+  marker.addListener('click', function () {
+    infoWindow.open(map,marker)
+  })
+  map.addListener("click", function () {
+    infoWindow.close();
+  });
+
+
+
+
   // event start && end draggable 
   google.maps.event.addDomListener(marker, 'dragstart', function (e) {
     console.log('Let us go :', e);
