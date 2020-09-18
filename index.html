@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Demo GG Map</title>  
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/v4-shims.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+</head>
+<body>
+  <div id="map"></div>
+  <div class="control-left-wrapper">
+    <div class="zoom-in" id="zoom-in"><i class="fas fa-plus"></i></div>
+    <div class="zoom-out" id="zoom-out"><i class="fas fa-minus"></i></div>
+    <div class="current-location" id="current-location"><i class="fas fa-paper-plane"></i></div>
+
+  </div>
+
+
+  
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJGC72uPBR_xa79s8URwRCuCrLNHA83bk&callback=initMap&libraries=&v=weekly"
+    defer></script>
+    <script src="./map.js"></script>
+</body>
+
+</html>
